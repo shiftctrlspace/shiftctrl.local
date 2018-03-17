@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shift-CTRL Local</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            /**
+             * @group Typography.
+             */
+            @font-face {
+                font-family: "D-DIN";
+                src: url("fonts/D-DIN.ttf");
+            }
+            body, h3 {
+                font: 22px/1.5em "D-DIN", Arial;
+            }
+            h1, h2, h3 {
+                color: #000;
+                font-weight: bold;
+                text-align: center;
+            }
+            h1 {
+                font-size: 40px;
+                margin-top: 3em;
+            }
+            header h1 {
+                margin: 0;
+            }
+            h2 {
+                font-size: 30px;
+                margin-top: 2em;
+            }
+            h3 {
+                text-align: left;
+            }
+            strong em {
+                text-transform: uppercase;
+                font-style: normal;
+            }
+            abbr {
+                cursor: help;
+            }
+
+            /**
+             * @group Background.
+             */
+            html, body {
+                margin: 0;
+                border: none;
+                padding: 0;
+                background: #FFF;
+            }
+            ul, ol {
+                margin: 0;
+                padding: 0 1.5em;
+                list-style-type: circle;
+            }
+            .hidden {
+                display: none;
+            }
+
+            /**
+             * @group Layout.
+             */
+            header {
+                margin-top: 2em;
+            }
+            #MainColumn {
+                width: 90%;
+                max-width: 60em;
+                margin: 3em auto 0;
+            }
+            #MainColumn footer {
+                margin: 3em 0;
+            }
+            #MainColumn footer p:last-child {
+                text-align: center;
+            }
+
+            /**
+             * @group Links.
+             */
+            a {
+                color: #000;
+            }
+            a:hover {
+                color: #18AD97;
+                transition: color .4s;
+            }
+
+            /**
+             * @group Navigation bars.
+             */
+            nav {
+                margin: 40px 0;
+                text-align: center;
+            }
+            nav li {
+                display: inline;
+                padding: 0 30px;
+                border-left: 1px solid #000;
+            }
+            nav li:first-child {
+                border: none;
+            }
+            @media screen and (max-width: 500px) {
+                nav li {
+                    border-left: 0;
+                    display: block;
+                }
+            }
+
+            /**
+             * @group Sections.
+             */
+            #welcome {
+                text-align: center;
+            }
+            #welcome p:first-of-type {
+                text-align: left;
+            }
+
+            #help:target {
+                border: 2px dotted #EF605B;
+                padding: 10px;
+            }
+
+            /**
+             * @group Buttons.
+             */
+            #library-button {
+                margin: 50px auto;
+                text-align: center;
+            }
+            #library-button a {
+                display: inline-block;
+                border: 2px solid #000;
+                border-radius: 3px;
+                background-color: #fff;
+                padding: 35px 40px;
+                text-decoration: none;
+                color: #000;
+                font-size: 30px;
+            }
+            #library-button a:hover {
+                background-color: #000;
+                color: #fff; 
+            }
+
+            /**
+             * @group Logo animation.
+             */
+            #logo {
+                display: block;
+                margin: 0 auto 2em;
+                animation: 2s fade-in;
+            }
+            @keyframes fade-in {
+                from { opacity: 0; }
+                to   { opacity: 1; }
+            }
+       </style>
+    </head>
+    <body>
+        <header>
+            <h1><img id="logo" src="img/logo.bw.368x368.gif" alt="Shift-CTRL Local" height="300" /></h1>
+        </header>
+
+        <main id="MainColumn">
+            <section id="welcome">
+                <h2>Welcome to the Shift-CTRL Local Resource Center!</h2>
+                <p>For today&rsquo;s I/O session, we&rsquo;ve prepared a number of demonstrations for you to experience and, we hope, to enjoy. Each demo is interactive; we <em>want</em> you to play with them. If you&rsquo;re already familiar with the tools on display, just have fun. If you&rsquo;re not, that&rsquo;s okay! Look around and ask the person nearest you if they know how the demo works. There are many people here who helped set these up, and we&rsquo;ll be happy to show you the ropes. If no one's nearby, you can always <a href="#help">txt us for help!</a></p>
+                <p>On tap at today&rsquo;s I/O session:</p>
+            </section><!-- #welcome -->
+
+            <nav id="MainNav">
+                <li><a href="#library">Digital Library</a></li>
+            </nav>
+
+            <p>At past I/O sessions, we've demonstrated:</p>
+            <nav id="SecondaryNav">
+                <li><a href="#wireshark">Wireshark</a></li>
+                <li><a href="#rtl-sdr">RTL-SDR</a></li>
+                <li><a href="#raspberry-pi">Raspberry Pi</a></li>
+            </nav>
+
+            <section id="library">
+                <h2>Digital Library</h2>
+                <p>Our Digital Library provides free access to over 1,500 <abbr title="Digital &lsquo;Rights&rsquo; Management">DRM</abbr>-free books, zines, and other literature for your reading pleasure and education. You can download the literature of interest to you and take it with you!</p>
+                <p id="library-button">
+                    <a href="//<!--#echo var="HTTP_HOST" -->:8080/">Access the Library</a>
+                </p>
+                <h3>For an even better reading experience&hellip;</h3>
+                <ul>
+                    <li>If you have an iPhone, consider trying out an <acronym title="Open Publication Distribution System"><a href="https://en.wikipedia.org/wiki/OPDS">OPDS</a></acronym> browser application, such as <a href="https://itunes.apple.com/us/app/kybook-epub-fb2-pdf-djvu-reader/id673027171">KyBook Reader</a>.</li>
+                    <li>Android users, you may want to install <a href="https://f-droid.org/">F-Droid</a> (an alternative to the Google Play Store that lets you download and install paid apps completely free of charge), and then from there install <a href="https://f-droid.org/packages/org.geometerplus.zlibrary.ui.android/">FBReader</a>.</li>
+                </ul>
+                <h3>How the Library works</h3>
+                <p>The Digital Library runs on free software called <a href="https://calibre-ebook.com/">Calibre</a>, which provides cataloging functionality, metadata retrieval, Web-based distribution, and more out-of-the-box. Free software plugins (written in <a href="https://www.python.org/">Python</a>) can provide additional features, such as <a href="https://apprenticealf.wordpress.com/2012/09/10/calibre-plugins-the-simplest-option-for-removing-most-ebook-drm/">DRM removal</a>.</p>
+            </section><!-- #library -->
+
+            <section id="wireshark">
+                <h2>Wireshark</h2>
+                <p>Computers talk to each other&mdash;a lot. In fact, digital communications technologies such as Wi-Fi work the same way as shouting in a room. Any other computer within metaphorical earshot can hear what was said. <a href="https://wireshark.org/" title="Read more about Wireshark."><dfn>Wireshark</dfn></a> is a free and open source software tool known as a &ldquo;packet analyzer&rdquo; or a &ldquo;packet sniffer.&rdquo; It&rsquo;s used for network troubleshooting, analysis, communications protocol development, and education. Essentially, it's a digital eavesdropper. As a forensic tool, it can dissect the contents of the messages sent between computers. Of course, this makes it a prime tool for hacking and security testing. We&rsquo;ve set up an interactive demo to show you just what &ldquo;sniffing packets&rdquo; really means. Connect to the &ldquo;<strong>Shift-CTRL Wireshark Demo (INSECURE!)</strong>&rdquo; Wi-Fi network with your device, but <em>don&rsquo;t do anything sensitive (like online banking) while connected to it</em>. You&rsquo;ll be surprised at how much you can find out just by listening in.</p>
+                <h3>How Wireshark works</h3>
+                <p>Whenever your computer sends a message via a network connection, such as a network cable, a Wi-Fi radio, or even from one app to another on your own computer, your computer emits a <dfn>packet</dfn> (literally, a package) of information. The outside wrapper of these packets can be inspected just as any physical package can be. If the packet is unencrypted, i.e., if the package is not sealed or locked, it can be opened, and its contents examined. Wireshark simply looks at all the packets transiting across a network connection to which it has access, and shows you the content. This might be Web pages, e-mail messages, or whatever else you&rsquo;re downloading.</p>
+            </section><!-- #wireshark -->
+
+            <section id="rtl-sdr">
+                <h2>RTL-SDR</h2>
+                <p>Our older technologies are the breath of life for our current technologies. This is richly illustrated in the world of <abbr title="Software-Defined Radio">SDR</abbr>, or software-defined radio, where analog meets digital. <dfn>Software-defined radio</dfn> is simply a radio where components that have been traditionally implemented in hardware are instead implemented in software. This means that by using a mix of free software with inexpensive and widely available hardware (in our case, the Realtek chipset, or <a href="https://rtl-sdr.com/" title="Read more and find out about some interesting RTL-SDR projects.">RTL-SDR</a>), you can sense the radio energy all around you. From <a href="https://www.radioreference.com/" title="Find radio frequencies of interest at RadioReference.com.">every radio station</a> on the AM/FM bands to your local police precinct scanners, and even commercial airplane transponders, we are awash in radio waves all around us. The radio world is packed with confusing acronyms, so we&rsquo;re compiling <a href="https://github.com/AnarchoTechNYC/meta/wiki/Software-defined-radio">an educational guide dedicated to software-defined radio</a> along with <a href="https://github.com/AnarchoTechNYC/meta/wiki/Glossary">a comprehensive glossary of terms</a>.</p>
+                <h3>How SDRs work</h3>
+                <p>A software-defined radio, or SDR, is simply the absolute bare-bones radio hardware required to sense energy waves. This means they are composed of an antennae attached to a conductive wire called a feed line, which is in turn connected to an electrical circuit board that converts the analog energy waves into digital signals. That small circuit board is perhaps unimaginatively called an analog-to-digital converter, or an ADC. Once digitized, the energy can be manipulated in exactly the same way as any other digital information, because that&rsquo;s exactly what it&rsquo;s become. You can even make your own antennae out of commodity coaxial cable (the same copper wiring you often see in hardware stores) to boost the receptivity of your SDR!</p>
+            </section><!-- #rtl-sdr -->
+
+            <section id="raspberry-pi">
+                <h2>Raspberry Pi</h2>
+                <p>A <a href="https://www.raspberrypi.org/"><dfn>Raspberry Pi</dfn></a> or &ldquo;RPi&rdquo; is a full-featured computer, just like your laptop, contained entirely on a single circuit board. It was initially developed as a teaching aid in countries without plentiful access to computers. At a retail cost of $35 USD, they are extremely inexpensive, portable, and surprisingly powerful. While the Raspberry Pi may be slower than your phone, it still packs enough punch to function as server infrastructure for hundreds, if not thousands, of users. In fact, <a href="#library">our Library demo</a> and even this Web page is <a href="https://tech-autonomy.com/+infrastructure/raspberry-pi" title="Read our guide to setting up a Raspberry Pi.">powered by a Raspberry Pi</a>! Can you find it? (Hint: it&rsquo;s in this room, somewhere.) Now, imagine what the phone in your pocket is capable of.</p>
+                <h3>How Raspberry Pis work</h3>
+                <p>The core of a Raspberry Pi is a computer chip called an <dfn><abbr title="Advanced RISC Machine">ARM</abbr> processor</dfn>. This core processor, more commonly known as a <abbr title="Central Processing Unit">CPU</abbr>, is not like the Intel&reg; chips on more conventional personal computers. Rather, it implements a simpler set of capabilities, and this is known as a Reduced Instruction Set Computer or RISC machine. Such simplicity, however, does not sacrifice capability, because the nature of digital information is such that any device that can do simple arithmetic (adding and substracting numbers) can perform <em>all</em> possible actions. The only distinction is how long a given action might take. It turns out that if you use free software, serving websites, creating rich musical scores, and even performing mind-bogglingly complex mathematics does not require much more than a little bit of time and a relatively simple adding machine—like, say, a Raspberry Pi.</p>
+            </section><!-- #raspberry-pi -->
+
+            <footer>
+                <section id="donate">
+                    <h2>Donate to Support Shift-Ctrl-Space</h2>
+                    <p>While all of our demos were built with donated hardware and free software and I/O events are free to attend, grocery stores still do not offer free food, so we still ask that you <strong>support our efforts to cultivate autonomy with a suggested donation of $10</strong>. You can drop some money in the tip jar(s) near the demo stations, or donate to I/O organizers digitally using the following links:</p>
+                    <ul>
+                        <li><a href="https://www.paypal.me/floraposidonia">Donate via PayPal</a></li>
+                        <li><a href="https://venmo.com/Emily-Heinz">Donate via Venmo</a></li>
+                        <li><a href="https://cash.me/%24seaverses">Donate via Square Cash</a></li>
+                        <li><a href="bitcoin:17ByVbkM6mf7bytqWRFwzjqradBkmVh4Tr?label=Shift-Ctrl-Space">Donate via Bitcoin</a></li>
+                    </ul>
+                </section><!-- #donate -->
+
+                <h2 id="help">Help</h2>
+                <p>Sound like fun but having trouble? <a href="sms:3239634827?body=My%20name%20is%20NAME.%20Can%20you%20help%20me%20with%20the%20Shift-CTRL%20Library%3F%20I%20am%20wearing%20OUTFIT%2C%20so%20you%20can%20find%20me.%20%3A%29%20Thanks%21">Click here to txt us</a>! No response? Ask around! We'll be happy to show you the ropes.</p>
+                <p><strong>Please Note:</strong> The Local Resource Center is, as the name suggests, <em>local</em>. This means that it is only accessible near the physical space in which it is hosted. For example, unless you download the books from our Library onto your device, <em>you will not have access to them until you return here</em>.</p>
+                <p>Welcome to <a href="https://shiftctrl.space/">ShiftCTRL.space</a>.</p>
+            </footer>
+        </main>
+    </body>
+</html>
