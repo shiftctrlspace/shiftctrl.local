@@ -121,6 +121,24 @@
                 text-align: left;
             }
 
+            #donate ul {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            #donate li {
+                flex: 1;
+                margin-bottom: 1em;
+                text-align: center;
+                list-style-type: none;
+            }
+            #donate a::after {
+                display: block;
+                content: attr(title);
+            }
+            #donate ul img {
+                width: 164px;
+            }
+
             #help:target {
                 border: 2px dotted #EF605B;
                 padding: 10px;
@@ -226,10 +244,10 @@
                     <h2>Donate to Support Shift-Ctrl-Space</h2>
                     <p>While all of our demos were built with donated hardware and free software and I/O events are free to attend, grocery stores still do not offer free food, so we still ask that you <strong>support our efforts to cultivate autonomy with a suggested donation of $10</strong>. You can drop some money in the tip jar(s) near the demo stations, or donate to I/O organizers digitally using the following links:</p>
                     <ul>
-                        <li><a href="https://www.paypal.me/floraposidonia">Donate via PayPal</a></li>
-                        <li><a href="https://venmo.com/Emily-Heinz">Donate via Venmo</a></li>
-                        <li><a href="https://cash.me/%24seaverses">Donate via Square Cash</a></li>
-                        <li><a href="bitcoin:17ByVbkM6mf7bytqWRFwzjqradBkmVh4Tr?label=Shift-Ctrl-Space">Donate via Bitcoin</a></li>
+                        <li><a href="https://www.paypal.me/floraposidonia" title="Donate via PayPal"><img src="img/qr.donate.paypal.132x132.gif" alt="Donate via PayPal" /></a></li>
+                        <li><a href="https://venmo.com/Emily-Heinz" title="Donate via Venmo"><img src="img/qr.donate.venmo.132x132.gif" alt="Donate via Venmo" /></a></li>
+                        <li><a href="https://cash.me/%24seaverses" title="Donate via Square Cash"><img src="img/qr.donate.square-cash.132x132.gif" alt="Donate via Square Cash" /></a></li>
+                        <li><a href="bitcoin:17ByVbkM6mf7bytqWRFwzjqradBkmVh4Tr?label=Shift-Ctrl-Space" title="Donate via BitCoin"><img src="img/qr.donate.bitcoin.164x164.gif" alt="Donate via Bitcoin" /></a></li>
                     </ul>
                 </section><!-- #donate -->
 
